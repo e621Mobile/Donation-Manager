@@ -1,0 +1,5 @@
+{% for ong in ongs %}
+	<a href="{% url 'donation_ranking.views.ong' ong.name %}">
+		{{ ong.name }}
+	</a>
+{% endfor %}

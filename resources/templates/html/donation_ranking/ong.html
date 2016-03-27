@@ -1,0 +1,18 @@
+{{ong.name}}
+
+<br/>
+<br/>
+
+{%for donator in donators%}
+	{{donator.email}} - {{donator.total}} at {{donator.last_donation}}<br/>
+{%endfor%}
+
+<br/>
+<br/>
+
+<form method="POST" action="{% url 'donation_ranking.views.add_donation' ong.name %}">
+	Email: <input type="email" name="email" style="width: 300px;"><br/>
+	Ammount: <input type="number" name="ammount" style="width: 300px;"><br/>
+	Time: <input type="datetime" name="time" style="width: 300px;"><br/>
+	<input type="submit" value="Submit">
+</form>

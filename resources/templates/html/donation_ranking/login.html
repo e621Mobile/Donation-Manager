@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>
+			Login
+		</title>
+	</head>
+	<body>
+		{% if user.is_authenticated %}
+			You are logged in as {{ user.email }}
+			<br/>
+			<br/>
+		{% endif %}
+		{% if error %}
+			Wrong password
+			<br/>
+			<br/>
+		{% endif %}
+		{% if non_subscribe_account %}
+			This is not an Donation account
+			<br/>
+			<br/>
+		{% endif %}
+		<form method="POST">
+			Email
+			<input type="email" name="username">
+			<br/>
+			Password
+			<input type="password" name="password">
+			<br/>
+			<input type="submit" value="Log in">
+		</form>
+	</body>
+</html>
